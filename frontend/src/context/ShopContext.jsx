@@ -8,7 +8,7 @@ export const ShopContext = createContext();
 const ShopContextProvider = (props) => {
     const currency = '$';
     const delivery_fee = 10;
-    const backendUrl = 'https://mern-ecommerce-x1gy.onrender.com/';
+    const backendUrl = 'https://mern-ecommerce-x1gy.onrender.com';
     const [search,setSearch] = useState('');
     const [showSearch,setShowSearch] = useState(false);
     const [cartItems,setCartItems] = useState({});
