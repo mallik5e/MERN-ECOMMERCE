@@ -15,16 +15,19 @@ import SearchBar from './components/SearchBar';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Verify from './pages/Verify';
+import { ShopContext } from './context/ShopContext'
 
 function App() {
-  
+  const {token} = useContext(ShopContext);
 
   return (
     <div className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]">
       <ToastContainer/>
       <Navbar/>
       <SearchBar/>
-       <Routes>
+        {
+          token === "" ? <Login/> : <>
+          <Routes>
         <Route path='/' element={<Home/>} />
         <Route path='/collection' element={<Collection/>} />
         <Route path='/about' element={<About/>} />
@@ -36,6 +39,9 @@ function App() {
         <Route path='/orders' element={<Orders/>} />
         <Route path='/verify' element={<Verify/>} />
        </Routes>
+          </>
+        }
+       
        <Footer/>
     </div>
   )
