@@ -3,6 +3,7 @@ import { ShopContext } from '../context/ShopContext'
 import Title from '../components/Title';
 import { assets } from '../assets/assets';
 import CartTotal from '../components/CartTotal';
+import Login from'./Login'
 
 
 const Cart = () => {
@@ -32,7 +33,8 @@ const Cart = () => {
   return (
     {
       token == "" ? <Login/> : 
-       <div className='border-t pt-14'>
+     <>
+         <div className='border-t pt-14'>
        <div className='text-2xl mb-3'>
           <Title text1={'YOUR '} text2={'CART'} />
        </div>
@@ -68,6 +70,7 @@ const Cart = () => {
          </div>
        </div>
     </div>
+     </>
     }
   )
 }
