@@ -25,8 +25,7 @@ function App() {
       <ToastContainer/>
       <Navbar/>
       <SearchBar/>
-        {
-          token === "" ? <Login/> : <>
+        
           <Routes>
         <Route path='/' element={<Home/>} />
         <Route path='/collection' element={<Collection/>} />
@@ -39,8 +38,7 @@ function App() {
         <Route path='/orders' element={<Orders/>} />
         <Route path='/verify' element={<Verify/>} />
        </Routes>
-          </>
-        }
+          
        
        <Footer/>
     </div>
