@@ -4,8 +4,9 @@ import Title from '../components/Title';
 import { assets } from '../assets/assets';
 import CartTotal from '../components/CartTotal';
 
+
 const Cart = () => {
-  const {products,currency,cartItems,updateQuantity,navigate} = useContext(ShopContext);
+  const {products,currency,cartItems,updateQuantity,navigate,token} = useContext(ShopContext);
   const [cartData,setCartData] = useState([]);
 
   useEffect(()=>{
@@ -29,7 +30,9 @@ const Cart = () => {
 
 
   return (
-    <div className='border-t pt-14'>
+    {
+      token == "" ? <Login/> : 
+       <div className='border-t pt-14'>
        <div className='text-2xl mb-3'>
           <Title text1={'YOUR '} text2={'CART'} />
        </div>
@@ -65,6 +68,7 @@ const Cart = () => {
          </div>
        </div>
     </div>
+    }
   )
 }
 
